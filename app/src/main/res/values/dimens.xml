@@ -3,8 +3,9 @@
     <dimen name="article_item_tv_margin">10dp</dimen>
     <dimen name="article_item_iv_margin">10dp</dimen>
     <dimen name="article_item_tv_src_margin">10dp</dimen>
-    <dimen name="article_item_tv_date_size">12sp</dimen>
     <dimen name="article_item_tv_title_size">18sp</dimen>
     <dimen name="article_item_tv_description_size">16sp</dimen>
     <dimen name="article_item_iv_size">150dp</dimen>
+    <dimen name="article_item_tv_date_size">12sp</dimen>
+    <dimen name="article_item_cv_margin">5dp</dimen>
 </resources>

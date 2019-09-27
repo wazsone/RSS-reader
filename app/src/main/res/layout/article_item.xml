@@ -1,89 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/article_item_cv_margin"
+    android:layout_marginTop="@dimen/article_item_cv_margin"
+    android:layout_marginEnd="@dimen/article_item_cv_margin">
 
-    <TextView
-        android:id="@+id/article_item__date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/article_item_tv_margin"
-        android:textSize="@dimen/article_item_tv_date_size"
-        app:fontFamily="@font/roboto"
-        app:layout_constraintBottom_toTopOf="@id/article_item__title"
-        app:layout_constraintEnd_toStartOf="@id/article_item__image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="27 Сентября 2019" />
-
-    <TextView
-        android:id="@+id/article_item__title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/article_item_tv_margin"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/article_item_tv_title_size"
-        android:textStyle="bold"
-        app:fontFamily="@font/roboto"
-        app:layout_constraintEnd_toStartOf="@id/article_item__image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/article_item__date"
-        tools:text="Простой заголовок" />
-
-    <ImageView
-        android:id="@+id/article_item__image"
-        android:layout_width="@dimen/article_item_iv_size"
-        android:layout_height="@dimen/article_item_iv_size"
-        android:layout_margin="@dimen/article_item_iv_margin"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@android:color/darker_gray"
-        tools:src="@drawable/placeholder" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/article_item__barrier"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="article_item__title,article_item__image" />
-
-    <TextView
-        android:id="@+id/article_item__description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/article_item_tv_src_margin"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/article_item_tv_description_size"
-        android:visibility="gone"
-        app:fontFamily="@font/roboto"
-        app:layout_constraintBottom_toTopOf="@id/article_item__source"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/article_item__barrier"
-        tools:text="Описание: Bla-bla-bla-bla" />
-
-    <TextView
-        android:id="@+id/article_item__source"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/article_item_tv_src_margin"
-        android:text="Источник: Bla-bla-bla News"
-        android:textStyle="italic"
-        app:fontFamily="@font/roboto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/article_item__description" />
-
-    <View
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/article_item__source" />
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/article_item__date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/article_item_tv_margin"
+            android:textSize="@dimen/article_item_tv_date_size"
+            app:fontFamily="@font/roboto"
+            app:layout_constraintBottom_toTopOf="@id/article_item__title"
+            app:layout_constraintEnd_toStartOf="@id/article_item__image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="27 Сентября 2019" />
+
+        <TextView
+            android:id="@+id/article_item__title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/article_item_tv_margin"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/article_item_tv_title_size"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto"
+            app:layout_constraintEnd_toStartOf="@id/article_item__image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/article_item__date"
+            tools:text="Простой заголовок" />
+
+        <ImageView
+            android:id="@+id/article_item__image"
+            android:layout_width="@dimen/article_item_iv_size"
+            android:layout_height="@dimen/article_item_iv_size"
+            android:layout_margin="@dimen/article_item_iv_margin"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@android:color/darker_gray"
+            tools:src="@drawable/placeholder" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/article_item__barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="article_item__title,article_item__image" />
+
+        <TextView
+            android:id="@+id/article_item__description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/article_item_tv_src_margin"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/article_item_tv_description_size"
+            android:visibility="gone"
+            app:fontFamily="@font/roboto"
+            app:layout_constraintBottom_toTopOf="@id/article_item__source"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/article_item__barrier"
+            tools:text="Описание: Bla-bla-bla-bla" />
+
+        <TextView
+            android:id="@+id/article_item__source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/article_item_tv_src_margin"
+            android:text="Источник: Bla-bla-bla News"
+            android:textStyle="italic"
+            app:fontFamily="@font/roboto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/article_item__description" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/article_item__source" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

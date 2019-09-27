@@ -25,7 +25,15 @@ class MainActivity : AppCompatActivity() {
 
         main__rv_articles.layoutManager = LinearLayoutManager(this@MainActivity)
         main__rv_articles.itemAnimator = DefaultItemAnimator()
+        fetchFeed()
 
+        main__swipe_refresh_layout.setOnRefreshListener {
+            fetchFeed()
+            main__swipe_refresh_layout.isRefreshing = false
+        }
+    }
+
+    private fun fetchFeed() {
         coroutinScope.launch {
             val articles = try {
                 val parser = Parser()
@@ -37,6 +45,5 @@ class MainActivity : AppCompatActivity() {
             main__rv_articles.adapter = adapter
             adapter.notifyDataSetChanged()
         }
-
     }
 }

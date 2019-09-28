@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.prof.rssparser.Article
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.article_item.view.*
+import java.net.URL
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -65,6 +66,8 @@ class ArticleAdapter(private val articles: MutableList<Article>) :
                 } else {
                     Html.fromHtml(article.description)
                 }
+            itemView.article_item__source.text =
+                itemView.context.getString(R.string.article_url, URL(article.link).host)
             itemView.setOnClickListener {
                 if (itemView.article_item__description.visibility == View.GONE) {
                     itemView.article_item__description.visibility = View.VISIBLE

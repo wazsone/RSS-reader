@@ -44,7 +44,7 @@ class ArticleAdapter(private var articles: MutableList<Article>) :
             SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss ZZZZ", Locale.ENGLISH)
         return try {
             inputPattern.parse(sourceDateString)!!
-        } catch (e: java.lang.Exception) {
+        } catch (e: Exception) {
             Log.d(
                 TAG,
                 "Couldn't parse pubData by the 'EEE, d MMM yyyy HH:mm:ss ZZZZ' format. StackTrace: ${e.stackTrace}"
@@ -67,7 +67,7 @@ class ArticleAdapter(private var articles: MutableList<Article>) :
             itemView.article_item__date.text = try {
                 val outputPattern = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
                 outputPattern.format(parseDate(article.pubDate.toString()))
-            } catch (e: ParseException) {
+            } catch (e: Exception) {
                 Log.d(TAG, "Couldn't parse pubData. StackTrace: ${e.stackTrace}")
                 article.pubDate
             }

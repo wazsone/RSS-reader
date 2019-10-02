@@ -66,7 +66,7 @@ class ArticleAdapter(private var articles: MutableList<Article>) :
         fun bind(article: Article) {
             itemView.article_item__date.text = try {
                 val outputPattern = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
-                outputPattern.format(article.pubDate.toString())
+                outputPattern.format(parseDate(article.pubDate.toString()))
             } catch (e: ParseException) {
                 Log.d(TAG, "Couldn't parse pubData. StackTrace: ${e.stackTrace}")
                 article.pubDate

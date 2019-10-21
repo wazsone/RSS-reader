@@ -12,7 +12,6 @@ import com.prof.rssparser.Article
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.article_item.view.*
 import java.net.URL
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 

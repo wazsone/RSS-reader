@@ -1,9 +1,6 @@
 package com.example.rss_reader.ui.activity
 
-import android.content.Context
-import android.net.ConnectivityManager
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,29 +19,15 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
     private val adapter: ArticleAdapter = ArticleAdapter(mutableListOf())
 
-    private val isNetworkAvailable: Boolean
-        get() {
-            val connectivityManager =
-                getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val activeNetworkInfo = connectivityManager.activeNetworkInfo
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected
-        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        setupViews()
         init()
     }
 
     private fun init() {
-        if (!isNetworkAvailable) {
-            showConnetionAlert()
-            Log.d("TAG", "StackTrace: MainActivity.init()")
-        } else if (isNetworkAvailable) {
-            articlePresenter.loadNews()
-        }
+        setupViews()
+        articlePresenter.loadNews()
     }
 
     private fun setupViews() {
